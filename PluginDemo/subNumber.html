@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>div块布局</title>
+<script>
+function sub_test(){
+    var x,y,z;
+    x=document.getElementById('textfield').value;
+    y=document.getElementById('textfield2').value;
+    if(x==''){
+      alert("加数一不能为空！")
+      return false;
+    }else{
+       if(isNaN(x)==true){
+         alert("加数一请输入数值型！")
+         return false;
+       };
+    };
+    
+    if(y==''){
+      alert("加数二不能为空！")
+      document.getElementById('textfield').value="";
+      return false;
+    }else{
+       if(isNaN(y)==true){
+          alert("加数二请输入数值型！")
+          return false;
+       };
+    };
+    
+    z=parseInt(x)+parseInt(y);
+    sketchup.sub(x, y);
+};
+
+function sub2(msg)
+{
+	//alert(msg);
+	document.getElementById('textfield3').value=parseInt(msg);
+}
+</script>
+</head>
+<body>
+<form action="" method="get">
+<table width="300" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <th height="30" colspan="2" scope="col">加法计算器</th>
+    </tr>
+  <tr>
+    <td width="50" align="right" valign="middle">加数一：</td>
+    <td width="150" height="30" align="left" valign="middle"><input type="text" name="textfield" id="textfield"></td>
+  </tr>
+  <tr>
+    <td width="50" height="30" align="right" valign="middle">加数二：</td>
+    <td width="150" height="30" align="left" valign="middle"><input type="text" name="textfield2" id="textfield2"></td>
+  </tr>
+  <tr>
+    <td width="50" height="30" align="right" valign="middle">加数和：</td>
+    <td width="150" height="30" align="left" valign="middle"><input type="text" name="textfield3" id="textfield3"></td>
+  </tr>
+  <tr>
+    <td height="30" colspan="2" align="center" valign="middle"><input onClick="sub_test()" type="button" name="button" id="button" value="计算"></td>
+    </tr>
+</table>
+
+</form>
+</body>
+</html>
